@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+
+    <link href="__OACSS__/all.css" rel="stylesheet" type="text/css">
+    <link href="__OAJS__/editor/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__OAJS__/editor/css/froala_editor.min.css" rel="stylesheet" type="text/css">
+    <link href="__UTILLAYUI__/css/layui.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="background-color: #e6ecf5;">
+<div class="book_con01">
+    <!-- <p class="book_p"><span class="book_titSpan"><input type="text" class="book_input02"/><label>类</label><input type="text" class="book_input02"/><label>号</label></span></p> -->
+    <h1 class="book_h01"><input type="text" class="book_input02" id="year" value="" minlength="1" required style="text-align: center;">年<input type="text" id="province" minlength="1" required value="" class="book_input02" style="text-align: center;" />省严重精神障碍患者救治管理工作评估标准<!-- <input type="text" class="book_input02"/>次会议第<input type="text" class="book_input01"/>号提案</h1> -->
+    <form id="form_demo" >   <p class="book_p">
+        <table class="book_table" border="1" cellpadding="10">
+
+    <tr>
+      <td>
+        <label class="td_label">标准类型</label><i class="i_start"></i>
+      </td>
+      <td colspan="5">
+        {volist name="standard" id="vo"}
+        <input type="radio" class="input_radio" {if $vo.code == 1} checked="checked" {/if} name="standard" value="{$vo.code}" style="margin-left:30px;" /><a>{$vo.name}</a>
+        {/volist}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label class="td_label">评估类型</label><i class="i_start"></i>
+      </td>
+      <td colspan="5">
+        {volist name="assess" id="vo"}
+        <input type="radio" class="input_radio1" name="assess" {if $vo.code == 3} checked="checked" {/if} value="{$vo.code}" style="margin-left:30px;" /><a>{$vo.name}</a>
+        {/volist}
+      </td>
+    </tr>
+
+    <!-- <tr><td>
+        <label class="td_label">案由</label><i class="i_start"></i>
+    </td>
+        <td colspan="5"><input type="text" class="book_input03" name ="name" minlength="2"  required /></td>
+
+    </tr> -->
+    <tr><td><label class="td_label">单位名称</label><i class="i_start"></i></td>
+        <td ><input type="text" class="book_input03" id="depart" name ="name" minlength="1"  style="text-align: center;"  required /></td>
+
+        <td><label class="td_label">填报人</label><i class="i_start"></td>
+        <td>
+            <input type="text" id="reporter" minlength="1" required class="book_input03" style="text-align: center;" />
+        </td>
+        <td><label class="td_label" >审核人</label><i class="i_start"></td>
+        <td>
+            <input type="text" id="checker" minlength="1" required class="book_input03" style="text-align: center;" />
+        </td>
+    </tr>
+
+
+    <tr style="font-family: SimSun;">
+      <th width="10%">考核项目</th>
+      <th width="10%">考核指标</th>
+      <th >考核内容</th>
+      <th width="8%">分值</th>
+      <th >评分标准</th>
+      <th width="8%">自评得分</th>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td rowspan="4" >组织管理及保障措施情况（32+2分）</td>
+      <td >1．建立精神卫生工作领导小组或部门协调机制并召开协调会议情况</td>
+      <td style="text-align: left;">1.省级召开精神卫生工作领导小组或部门协调会议<input type="text" minlength="1" required id="l1" class="book_input02" style="text-align: center;color: red;width: 30px;" />次。<br>
+        2.建立工作领导小组或部门协调机制并召开协调会议的市（地、州）有<input type="text" minlength="1" required id="l2" class="book_input02" style="text-align: center;color: red;width: 30px;" />个。<br>
+        3.建立工作领导小组或部门协调机制并召开协调会议的县（市、区、旗）有<input type="text" minlength="1" required id="l3" class="book_input02" style="text-align: center;color: red;width: 30px;" />个。<br>
+        4.建立精神卫生综合管理小组并召开协调会议的乡镇（街道）有<input type="text" minlength="1" required id="l4" class="book_input02" style="text-align: center;color: red;width: 30px;" />个。<br>
+        5.建立精神卫生多部门信息共享机制，并定期交换相关信息的县（市、区、旗）有<input id="l5" type="text" class="book_input02" style="text-align: center;color: red;width: 30px;" />个。</td>
+      <td>8</td>
+      <td style="text-align: left;">省、市、县、乡镇四级普遍建立精神卫生工作领导小组或部门协调机制，本年度内至少召开1次工作协调会议。其中：<br>
+        1．省级建立精神卫生工作领导小组或部门协调机制，并召开至少一次协调会议，得1分；未召开协调会议，得0分。<br>
+        2.辖区内100%的市（地、州）均符合要求，得1分；90%及以上，得0.5分；90%以下，得0分。 <br>
+        3.辖区内100%县（市、区、旗）均符合要求，得2分；90%及以上，得1分，90%以下，得0分。<br>
+        4.辖区内70%的乡镇（街道）均符合要求，得3分；60%及以上，得2分；50%及以上，得1分；50%以下，得0分。<br>
+        5.辖区内100%县（市、区、旗）均符合要求，得1分；未达100%，得0分。</td>
+      <td><input type="text" minlength="1" required id="r1" value="" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+     
+      <td>2．各级财政按照法律要求安排精神卫生工作经费情况</td>
+      <td style="text-align: left;"><span>1.省级安排精神卫生工作专项经费<input type="text" minlength="1" required id="l21" class="book_input02" style="text-align: center;color: red;width: 30px;" />万元。</span><br>
+        <span>2.有<input type="text" minlength="1" required id="l22" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）安排精神卫生工作专项经费，共<input type="text" minlength="1" required id="l23" class="book_input02" style="text-align: center;color: red;width: 30px;" />万元。</span><br>
+
+3.有<input type="text" minlength="1" required id="l24" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）安排精神卫生工作专项经费，共<input type="text" minlength="1" required id="l25" class="book_input02" style="text-align: center;color: red;width: 30px;" />万元。</td>
+      <td>9+1</td>
+      <td style="text-align: left;">精神卫生工作专项经费是指当地财政部门安排的用于开展各项精神卫生防治工作的经费，不包括基建和人员经费。<br>
+1.省级安排精神卫生工作专项经费，得1分；未安排，得0分。<br>
+2.辖区内80%及以上市（地、州）安排精神卫生工作专项经费，得2分；70%及以上，得1分；低于70%，得0分。<br>
+3.辖区内80%及以上县（市、区、旗）安排精神卫生工作专项经费，得6分；70%及以上，得4分；60%及以上，得2分；低于60%，得0分。每超5%的县（市、区、旗），加0.5分，最高加1分。</td>
+      <td><input type="text" minlength="1" required id="r2" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      
+      <td>3.精神科医师培养情况</td>
+      <td style="text-align: left;">1.全省共有精神科执业（助理）医师<input type="text" minlength="1" required id="l31" class="book_input02" style="text-align: center;color: red;width: 30px;" />人。<br>每10万人口精神科执业（助理）医师<input type="text" minlength="1" required id="l32" class="book_input02" style="text-align: center;color: red;width: 30px;" />名。<br>
+2.2019年计划转岗培训<input type="text" minlength="1" required id="l33" class="book_input02" style="text-align: center;color: red;width: 30px;" />人，实际培训<input type="text" minlength="1" required id="l34" class="book_input02" style="text-align: center;color: red;width: 30px;" />人。<br>
+3.2019年计划精神科住院医师规范化培训<input type="text" minlength="1" required id="l35" class="book_input02" style="text-align: center;color: red;width: 30px;" />人，实际培训<input type="text" minlength="1" required id="l36" class="book_input02" style="text-align: center;color: red;width: 30px;" />人。</td>
+      <td>9</td>
+      <td style="text-align: left;">东部地区每10万人口精神科执业（助理）医师数量不低于3.8名，中西地区不低于2.8名。完成精神科医师转岗培训、精神科住院医师规范化培训任务。其中：<br>
+1.每10万人口精神科执业（助理）医师数量达标，得4分；每10万人口精神科执业（助理）医师数量达到标准值的80%，得2分；低于标准值的80%，得0分。<br>
+2.按照国家要求完成2019年精神科医师转岗培训任务的省份，得2分；培训人数达任务数的90%，得1.5分；达80%，得1分；达70%，得0.5分；低于70%，得0分。国家未安排转岗培训任务的省份，得2分。<br>
+3.按照国家要求完成2019年精神科住院医师规范化培训招生任务得3分；培训人数达任务数的90%，得2分；达80%，得1分；低于80%，得0分。</td>
+      <td><input type="text" minlength="1" required id="r3" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+      
+      <td>4.精神卫生医疗服务覆盖情况</td>
+      <td style="text-align: left;">1.有<input type="text" minlength="1" required id="l41" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）设有市级精神专科医院，其中设有心理门诊的有<input type="text" minlength="1" required id="l1" class="book_input02" style="text-align: center;color: red;width: 30px;" />个。<br>
+2.有<input type="text" minlength="1" required id="l42" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）设有精神专科医院或至少一所综合医院设立精神科（或心理科）门诊。<br>
+3.全省共有<input type="text" minlength="1" required id="l43" class="book_input02" style="text-align: center;color: red;width: 30px;" />个二级以上综合医院，其中<input type="text" minlength="1" required id="l44" class="book_input02" style="text-align: center;color: red;width: 30px;" />个设有心理门诊。</td>
+      <td>6+1</td>
+      <td style="text-align: left;">1.100%地市设市级精神专科医院，得2分。80%及以上地市符合要求，得1分，低于80%，得0分。50%的市级精神专科医院设有心理门诊，得1分。30%及以上，得0.5分；低于30%，得0分。<br>
+2. 辖区内100%县（市、区、旗）设精神专科医院或至少一家综合医院设立精神科，得2分。70%及以上，得1分；低于70%，得0分。<br>
+3.20%的二级以上综合医院设有心理门诊，得1分。10%及以上，得0.5分；低于10%，得0分。每超10%，加0.5分，最多加1分。</td>
+      <td><input type="text" minlength="1" required id="r4" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td rowspan="2" >重要政策措施落实情况（20+4分）</td>
+      <td >5.落实严重精神障碍患者门诊治疗保障政策情况</td>
+      <td style="text-align: left;">1.省级<input type="radio" id="l51" name="151" value="1">是/<input id="l51" type="radio" checked="true" name="151" value="0">否(请打√)将患者药物维持治疗纳入门诊统筹；<input type="radio" id="l52" name="152" value="1">是/<input type="radio" id="l52" checked="true" name="152" value="0">否(请打√)门诊报销比例不低于50%；<input type="radio" id="l53" name="153" value="1">是/<input type="radio" id="l53" checked="true" name="153" value="0">否(请打√)作为门诊特殊病种参照住院制定治疗相应的管理和支付办法。<br>
+2.有<input type="text" minlength="1" required id="l54" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）将患者药物维持治疗纳入门诊统筹；有<input type="text" minlength="1" required id="l55" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）门诊报销比例不低于50%；有<input type="text" minlength="1" required id="l56" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）作为门诊特殊病种参照住院制定治疗相应管理和支付办法。<br>
+3.有<input type="text" minlength="1" required id="l57" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）将患者药物维持治疗纳入门诊统筹；有<input type="text" minlength="1" required id="l58" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）门诊报销比例不低于50%。有<input type="text" minlength="1" required id="l59" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）作为门诊特殊病种参照住院报销标准执行。<br>
+4.有<input type="text" minlength="1" required id="l590" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）实行门诊一站式结算。</td>
+      <td>14+2</td>
+      <td style="text-align: left;">1.省级出台政策将严重精神障碍患者药物维持治疗纳入门诊统筹，得2分；报销比例不低于50%，得1分；作为门诊特殊病种参照住院制定治疗相应的管理和支付办法，得1分。<br>
+2.辖区内90%市（地、州）出台政策将严重精神障碍患者药物维持治疗纳入门诊统筹，得2分；80%及以上，得1.5分；70%及以上，得1分；60%及以上，得0.5分；60%以下，得0分。90%市（地、州）门诊报销比例不低于50%，得1.5分；80%及以上，得1分；70%及以上，得0.5分；70%以下，得0分。90%市（地、州）作为门诊特殊病种参照住院制定治疗相应的管理和支付办法，得1.5分；80%及以上，得1分；70%及以上，得0.5分；70%以下，得0分。<br>
+3.辖区内90%县（市、区、旗）出台政策将严重精神障碍患者药物维持治疗纳入门诊统筹，得2分；80%及以上，得1.5分；70%及以上得1分；60%及以上，得0.5分；60%以下，得0分。90%县（市、区、旗）门诊报销比例不低于50%，得1.5分；80%及以上，得1分；70%及以上，得0.5分；70%以下，得0分。90%县（市、区、旗）作为门诊特殊病种参照住院报销标准执行，得1.5分；80%及以上，得1分；70%及以上，得0.5分；70%以下，得0分。<br>
+4.90%的县（市、区、旗）实行门诊一站式结算，加2分；70%及以上，加1分。</td>
+      <td><input type="text" minlength="1" required id="r5" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+     
+      <td>6.实施以奖代补政策 落实患者监护责任情况</td>
+      <td style="text-align: left;">1.有<input type="text" minlength="1" required id="l61" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）实施以奖代补政策，并与奖补对象签订监护协议。<br>
+2.有<input type="text" minlength="1" required id="l62" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）扩大以奖代补对象范围。<br>
+3.有<input type="text" minlength="1" required id="l63" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）补助标准高于200元/月。</td>
+      <td>6+2</td>
+      <td style="text-align: left;">1.辖区内100%的县（市、区、旗）实施以奖代补政策，并与奖补对象签订监护协议，得6分；95%符合要求，得4分；90%符合要求，得2分；低于90%，得0分。<br>
+2.40%的县（市、区、旗）扩大以奖代补对象范围（不限于公安系统内和危险性评估3级以上的患者），加1分。<br>
+3.40%的县（市、区、旗）补助标准高于200元/月，加1分。</td>
+      <td><input type="text" minlength="1" required id="r6" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td rowspan="3" >严重精神障碍患者报告管理治疗情况（30+5分）</td>
+      <td >7.严重精神障碍患者报告情况</td>
+      <td style="text-align: left;">1.全省严重精神障碍患者报告患病率<input type="text" minlength="1" required id="l71" class="book_input02" style="text-align: center;color: red;width: 30px;" />‰。
+2.有<input type="text" minlength="1" required id="l72" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）报告患病率达到4‰。</td>
+      <td>10+1</td>
+      <td style="text-align: left;">1.省级报告患病率达到4‰,得4分；3.5‰及以上，得3分；3‰及以上，得2.5分；2.5‰及以上，得2分；低于2.5‰，得0分。超过4‰的，每超0.5‰，加0.5分，最多加1分。<br>
+2.辖区内80%县（市、区、旗）报告患病率达到4‰，得6分；70%及以上，得4分；60%及以上，得2分；低于60%，得0分。</td>
+      <td><input type="text" minlength="1" required id="r7" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+     
+      <td>8.严重精神障碍患者管理情况</td>
+      <td style="text-align: left;">1.全省严重精神障碍患者规范管理
+率<input type="text" minlength="1" required id="l81" class="book_input02" style="text-align: center;color: red;width: 30px;" />％。<br>
+2.有<input type="text" minlength="1" required id="l82" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）严重
+精神障碍患者规范管理率达到80%。<br>
+3.全省严重精神障碍患者面访率<input type="text" minlength="1" required id="83" class="book_input02" style="text-align: center;color: red;width: 30px;" />％。</td>
+      <td>10+2</td>
+      <td style="text-align: left;">1.省级在册患者规范管理率达到80%，得3分；70%及以上，得2分；60%及以上，得1分，低于60%得0分。超过80%的，每超5%加0.5分，最高加1分。<br>
+2.辖区内80%县（市、区、旗）在册患者规范管理率达到80%，得4分；70%及以上，得3分；60%及以上，得2分；50%及以上，得1分；低于50%，得0分。<br>
+3.省级在册患者面访率达到80%，得3分；70%及以上，得2分；60%及以上，得1分；低于60%，得0分。每超5%加0.5分，最高加1分。</td>
+      <td><input type="text" minlength="1" required id="r8" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+     <tr style="font-size:4px;font-weight:normal;">
+     
+      <td>9.严重精神障碍患者服药情况 </td>
+      <td style="text-align: left;">1.严重精神障碍患者服药率<input type="text" minlength="1" required id="l91" class="book_input02" style="text-align: center;color: red;width: 30px;" />％。<br>
+2.严重精神障碍患者规律服药率<input type="text" minlength="1" required id="l92" class="book_input02" style="text-align: center;color: red;width: 30px;" />％。<br>
+3.精神分裂症患者服药率<input type="text" minlength="1" required id="l93" class="book_input02" style="text-align: center;color: red;width: 30px;" />％。</td>
+      <td>10+2</td>
+      <td style="text-align: left;">1.省级在册严重精神障碍患者服药率达到70%，得3分；60%及以上，得2分；50%及以上，得1分；低于50%得0分。超过70%的，每超10%加0.5分，最高加1分。<br>
+2.省级在册严重精神障碍患者规律服药率达到50%，得3分；40%及以上，得2分；30%及以上，得1分；低于30%得0分。超过50%的，每超10%加0.5分，最高加1分。<br>
+3.省级在册精神分裂症患者服药率达到80%，得4分；70%及以上，得3分；60%及以上，得2分；50%及以上，得1分， 低于50%得0分。</td>
+      <td><input type="text" minlength="1" required id="r9" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td rowspan="2" >开展试点工作推广试点经验（8+3分）</td>
+      <td >10.推进社会心理服务体系建设试点</td>
+      <td style="text-align: left;">1.有<input type="text" minlength="1" required id="l101" class="book_input02" style="text-align: center;color: red;width: 30px;" />地市作为试点地区。<br>
+2.省级多部门赴试点地区开展联合调研<input type="text" minlength="1" required id="l02" class="book_input02" style="text-align: center;color: red;width: 30px;" />次。<br>
+3.试点地区<input type="radio" id="l103" name="103" value="1">是/<input type="radio" id="l103" checked="true" name="103" value="0">否(请打√)完成2019年国家要求的重点任务。</td>
+      <td>4+2</td>
+      <td style="text-align: left;">1.试点地区超过1个地市的，每增加1个地市作为试点地区加0.2分，最多加1分；直辖市试点工作覆盖全部区县的加1分。<br>
+2.省级开展多部门联合调研1次，得1分，超过1次以上的，每增加1次加0.5分，最多加1分。<br>
+3.试点地区完成2019年度15项重点任务得3分，完成10项以上得2分，完成5项以上得1分。完成5项以下不得分。</td>
+      <td><input type="text" minlength="1" required id="r10" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+    <tr style="font-size:4px;font-weight:normal;">
+     
+      <td>11.推广精神卫生综合管理试点经验</td>
+      <td style="text-align: left;">1.省级<input type="radio" id="1101" name="1101" value="1">是/<input id="1102" type="radio" checked="true" name="1101" value="0">否(请打√)制定和印发推广精神卫生综合管理试点经验的相关文件。<br>
+2.有<input type="text" minlength="1" required id="l1102" class="book_input02" style="text-align: center;color: red;width: 30px;" />个市（地、州）组织推广精神卫生综合管理试点工作经验。</td>
+      <td>4+1</td>
+      <td style="text-align: left;">1.省级制定和印发推广精神卫生综合管理试点经验的相关文件，得4分；未制定相关文件不得分。<br>
+2.50%的市（地、州）组织推广精神卫生综合管理试点工作经验，加1分。</td>
+      <td><input type="text" minlength="1" required id="r11" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+     <tr style="font-size:4px;font-weight:normal;">
+      <td rowspan="1" >社区康复服务（10+2分）</td>
+      <td >12.社区康复服务情况</td>
+      <td style="text-align: left;">1.有<input type="text" minlength="1" required id="l1301" class="book_input02" style="text-align: center;color: red;width: 30px;" />个县（市、区、旗）设有精神障碍社区康复机构或通过政府购买服务等方式委托社会组织开展康复工作。<br>
+2.在开展社区康复工作县（市、区、旗），有<input type="text" minlength="1" required id="l1302" class="book_input02" style="text-align: center;color: red;width: 30px;" />名在册严重精神障碍患者，其中<input type="text" minlength="1" required id="l1303" class="book_input02" style="text-align: center;color: red;width: 30px;" />名居家患者接受社区康复服务。</td>
+      <td>10+2</td>
+      <td style="text-align: left;">1.有60%以上的县（市、区、旗）设有精神障碍社区康复机构或通过政府购买服务等方式委托社会组织开展康复工作，得5分；50%及以上得4分；40%及以上得3分；30%及以上得2分；20%及以上得1分；低于20%得0分。超过60%的，每超5%加0.5分，最高加1分。<br>
+2.在开展社区康复工作的县（市、区、旗），40%以上的居家患者接受社区康复服务，得5分；30%及以上得3分；20%及以上得1分；低于20%得0分。超过40%的，每超5%加0.5分，最高加1分。</td>
+      <td><input type="text" minlength="1" required id="r12" class="book_input01" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td colspan="2" >国家卫生健康委复核情况（+4分）</td>
+      <td style="text-align: left;">国家卫生健康委复核评估资料的准确性及完整性。</td>
+      <td>+4</td>
+      <td style="text-align: left;">1.评估资料无明显逻辑错误，加1分。<br>
+2.评估资料无缺项漏项，加1分。<br>
+3.自评得分与审核得分差距在5分以内，加2分。</td>
+      <td><input type="text" minlength="1" required id="r13" class="book_input01" value="" style="text-align: center;color: red;font-size:18px;" /></td>
+    </tr>
+
+
+
+    <tr style="font-size:4px;font-weight:normal;">
+      <td colspan="2" >合计</td>
+      <td colspan="3">100+20分（含加分项20分）</td>
+      <td><input type="text" minlength="1" required id="r15" class="book_input01" style="text-align: center;color: gold;font-size:18px;" value="" /></td>
+    </tr>
+
+    <tr><td colspan="6"><label class="td_label">备注信息（包括材料记录、数据记录等）</label></td>
+
+    </tr>
+    <tr><td colspan="6">
+        <textarea  class="textArae" id="editor" ></textarea>
+    </td>
+
+    </tr>
+    <tr><td colspan="5"><label class="label_right">上报日期</label></td>
+        <td> <input type="date" minlength="1" required class="book_input03" id="demo"/></td>
+
+    </tr>
+    <tr ><td>
+        <label class="td_label">相关附件</label>
+    </td>
+        <td colspan="5">
+            <p><label class="td_label">文件1</label><input type="file" value="选择文件"/></p>
+    <p><label class="td_label">文件2</label><input type="file" value="选择文件"/> </p>
+    <p><label class="td_label">文件3</label><input type="file" value="选择文件"/></p>
+    <p><label class="label_red">附件总大小不能超过80M，超过限制,将不能发送</label></p>
+        </td>
+
+    </tr>
+    
+
+</table>
+    </p>
+    <p class="book_foot">
+      <input type="submit" id="btn" value="保存" class="layui-btn layui-btn-normal" style="width:100px;" />
+      <input type="button" id="back" value="取消" class="layui-btn layui-btn-warm" style="width:100px;"/>
+    </p>
+  </form>
+</div>
+<script  src="__OAJS__/jquery/jQuery-2.2.0.min.js"></script>
+<script src="__OAJS__/editor/js/froala_editor.min.js"></script>
+
+<script src="__OAJS__/editor/js/plugins/tables.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/lists.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/colors.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/media_manager.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/font_family.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/font_size.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/block_styles.min.js"></script>
+<script src="__OAJS__/editor/js/plugins/video.min.js"></script>
+<script src="__OAJS__/date/js/laydate.js"></script>
+<script src="__UTILLAYER__/layer.js"></script>
+<!-- <script>
+    $(function(){
+        $('#editor').editable({inlineMode: false, alwaysBlank: true})
+    });
+</script> -->
+<!-- <script >
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("修改成功");
+        }
+    });
+    $().ready(function() {
+        $("#form_demo").validate();
+    });
+</script> -->
+<script>
+    !function(){
+        laydate.skin('danlan');//
+        laydate({elem: '#demo'});
+        laydate({elem: '#demo1'});//
+    }();
+</script>
+
+<script>
+    /*核心字段校验*/
+    /*if ($('#year').val() == '' || $('#province').val() == '') {
+      layer.alert('保存失败：年份或省份不能为空',{
+       title: '提示框',      
+       icon:5 
+      });
+      // return false;
+    } else if($('#depart').val() == '' || $('#reporter').val() == '' || $('#checker').val() == ''){
+      layer.alert('保存失败：所属机构或上报人或审核人不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    } else if($('#l1').val() == '' || $('#l2').val() == '' || $('#l3').val() == '' || $('#l4').val() == '' || $('#l5').val() == ''){
+      layer.alert('保存失败：考核指标1考核内容填写不完整',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    } else if($('#l21').val() == '' || $('#l22').val() == '' || $('#l23').val() == '' || $('#l24').val() == '' || $('#l25').val() == ''){
+      layer.alert('保存失败：考核指标2考核内容填写不完整',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    } 
+*/
+    /*自动计算评估总分*/
+    $('#r13').blur(function(){
+      var r1 = $('#r1').val();
+      var r2 = $('#r2').val();
+      var r3 = $('#r3').val();
+      var r4 = $('#r4').val();
+      var r5 = $('#r5').val();
+      var r6 = $('#r6').val();
+      var r7 = $('#r7').val();
+      var r8 = $('#r8').val();
+      var r9 = $('#r9').val();
+      var r10 = $('#r10').val();
+      var r11 = $('#r11').val();
+      var r12 = $('#r12').val();
+      var r13 = $('#r13').val();
+      var r15 = $('#r15').val();
+      var s1 = Number(r1);
+      var s2 = Number(r2);
+      var s3 = Number(r3);
+      var s4 = Number(r4);
+      var s5 = Number(r5);
+      var s6 = Number(r6);
+      var s7 = Number(r7);
+      var s8 = Number(r8);
+      var s9 = Number(r9);
+      var s10 = Number(r10);
+      var s11 = Number(r11);
+      var s12 = Number(r12);
+      var s13 = Number(r13);
+      var score = (s1 + s2 + s3 + s4 + s5 + s6 +s7 + s8 + s9 + s10 + s11 +s12 + s13);
+      layer.alert('本次评估总分为：'+score+'分',{
+       title: '提示框',      
+       icon:1,    
+      });
+    });
+
+    $('#btn').click(function(){
+      
+    })
+
+    /*if ($('#r1').val() == '' || $('#r2').val() == '' || $('#r3').val() == '' || $('#r4').val() == '' || $('#r5').val() == '') {
+      layer.alert('保存失败：指标1-5自评得分有空项',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    } else if($('#r6').val() == '' || $('#r7').val() == '' || $('#r8').val() == '' || $('#r9').val() == '' || $('#r10').val() == '') {
+      layer.alert('保存失败：指标6-10自评得分有空项',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    } else if($('#r11').val() == '' || $('#r12').val() == '' || $('#r14').val() == '') {
+      layer.alert('保存失败：指标11-14自评得分有空项',{
+       title: '提示框',      
+       icon:5,    
+      });
+      // return false;
+    }*/
+   /* var s1 = Number(r1);
+    var s2 = Number(r2);
+    var s3 = Number(r3);
+    var s4 = Number(r4);
+    var s5 = Number(r5);
+    var s6 = Number(r6);
+    var s7 = Number(r7);
+    var s8 = Number(r8);
+    var s9 = Number(r9);
+    var s10 = Number(r10);
+    var s11 = Number(r11);
+    var s12 = Number(r12);
+    var s13 = Number(r13);
+    var score = (s1 + s2 + s3 + s4 + s5 + s6 +s7 + s8 + s9 + s10 + s11 +s12 + s13);*/
+    
+    /*$('#r13').blur(function(){
+      alert('122');
+    })*/
+    /*if (r15 == '') {
+      
+      alert(score); 
+    }*/
+    /*if(year == '' || null == year){
+      layer.alert('保存失败：年份不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l1 == '' || null == l1) {
+      layer.alert('保存失败：指标1考核内容1（省级召开精神卫生工作领导小组或部门协调会议次数）不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l2 == '' || null == l2) {
+      layer.alert('保存失败：指标1考核内容2（建立工作领导小组或部门协调机制并召开协调会议的市（地、州）个数）不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l3 == '' || null == l3) {
+      layer.alert('保存失败：指标1考核内容3（建立工作领导小组或部门协调机制并召开协调会议的县个数）不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l4 == '' || null == l4) {
+      layer.alert('保存失败：指标1考核内容4（建立精神卫生综合管理小组并召开协调会议的乡镇个数）不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l5 == '' || null == l5) {
+      layer.alert('保存失败：指标1考核内容5（建立精神卫生多部门信息共享机制，并定期交换相关信息的县个数）不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(l21)*/
+
+    /*if (r1 == '' || null == r1) {
+      layer.alert('保存失败：指标1自评得分不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    } else if(r2 == '' || null == r2) {
+      layer.alert('保存失败：指标2自评得分不能为空',{
+       title: '提示框',      
+       icon:5,    
+      });
+      return false;
+    }*/
+  // });
+</script>
+</body>
+</html>
